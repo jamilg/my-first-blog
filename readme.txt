@@ -1,12 +1,16 @@
-###############
+#######################
+#Create a python environment 'myenv'
+$ python3 -m venv myvenv
+
+#######################
 #To activete virtual environment
 in shell: myvenv\Scripts\activate
 
-###############
+#######################
 #To create project
 in shell (myenv): django-admin.exe startproject mysite .
 
-###############
+#######################
 #Settings of the site
 #mysite/settings.py
 
@@ -23,7 +27,7 @@ DATABASES = {
     }
 }
 
-######################
+#######################
 #Create a database
 #shell from djangogirls folder
 python manage.py migrate
@@ -69,3 +73,23 @@ blog/admin.py
 #######################
 #Create user for admin.py
 (myvenv) C:\Users\Name\djangogirls> python manage.py createsuperuser
+
+#######################
+#Deployment
+#Install git
+#Start new git repository
+$ git init
+Initialized empty Git repository in ~/djangogirls/.git/
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
+
+#Edit .gitignore and add folders, filenames and wildcart expressions to ignore.
+
+#Adding all files (except for those that are in .gitignore) to git repository
+$ git add --all .
+$ git commit -m "My Django Girls app, first commit"
+
+#Connecting local git repository to github account
+$ git remote add origin https://github.com/<your-github-username>/my-first-blog.git
+$ git push -u origin master
+
